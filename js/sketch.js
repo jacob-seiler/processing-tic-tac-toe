@@ -258,7 +258,7 @@ mousePressed = function() {
 		pos = 8;
 	}
 
-	if (pieces[pos] != 0) {
+	if (pieces[pos] !== 0) {
 		return;
 	}
 
