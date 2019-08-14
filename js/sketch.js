@@ -204,6 +204,7 @@ draw = function() {
 		textFont("impact", 300);
 		textAlign(CENTER, CENTER);
 		fill(250, 95, 95);
+		strokeWeight(0);
 		text("TIE", 200, 200);
 	} else if (checkWin()[0] !== 0) {
 		drawWin(checkWin()[1] + 1, checkWin()[2] + 1);
@@ -211,11 +212,13 @@ draw = function() {
 			textFont("impact", 100);
 			textAlign(CENTER, CENTER);
 			fill(250, 95, 95);
+			strokeWeight(0);
 			text("X WINS", 200, 200);
 		} else {
 			textFont("impact", 100);
 			textAlign(CENTER, CENTER);
 			fill(250, 95, 95);
+			strokeWeight(0);
 			text("O WINS", 200, 200);
 		}
 	} else {
@@ -253,6 +256,10 @@ mousePressed = function() {
 		pos = 7;
 	} else if (mouseX >= 275 && mouseX <= 400 && mouseY >= 275 && mouseY <= 400) {
 		pos = 8;
+	}
+
+	if (pieces[pos] != 0) {
+		return;
 	}
 
 	if (xTurn) {
